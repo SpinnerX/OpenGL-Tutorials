@@ -16,17 +16,22 @@
 #include "stb_image.h"
 
 /**
- * @example Lighting Maps Tutorial #1 - Lighting Maps
+ * @example Lighting Maps Tutorial #1 - Specular Maps
+ * @param SpecularMaps
+ * @note Intensity of Specular highlights comes from brightness of each pixel in image.
+ * @note Where each pixel of specular map can be displayed as color vector where black represents color vec3(0.0) and gray color vec3(0.5) as an example.
+ * @note In the fragment shader, in the demo we sample the corresponding values from this specular texture values and multiply that by tjos values with light intensity.
+ * @note More 'white' a pixel, higher the result of it's multiplication and thus brighter the specular component an object becomes.
+ * @note Due to because container mostly consists of wood, wood as a material should have no specular highlights
+ * @note Entire wooden section of diffuse texture was converted to black; black sections do noy have any specular highlighting.
+ * @note Steel boarder of container has varying specular intensities with steel itself being relatively susceptible to specular highlighting, while cracks aren't.
  * 
- * @param LightingMaps
- * @note Previous demo code in Material 01 is showing how to define a struct for representing material properties
- * @note Giving each object uniquely looks in comparison to the other objects.
- * @note Though realistic objects will not contain a single material rather several materials.
- * @note Material Systems isn't sufficient for all but the simplest models so in this example and moving forward we will be expanding our materials sytsem
- * @note Introducing diffuse and specular maps.
- * @note Where these allow us to influence diffuse (and indirectly the ambient component since they should be the same, anyways) and specular component of an object with more precision
- * 
- * @param DiffuseMaps
+ * @param SamplingSpecularMapsContext
+ * @note Specular map is like any other texture.
+ * @note Only thing different is in fragment shader we make specular a sampler2D, and we set our sampler2d material
+ * @note Then we bind this material like what we did with the diffuse map.,
+ * @note When you run diffuse map example will have more intensity from light
+ * @note Whereas if you run this demo, you'll see the intensity is not that much from the light source.
  * 
  * @param MoreThingsToNOTE
  * @note From our previous example I added a Skybox to show exactly how you would add a skybox to this demo
