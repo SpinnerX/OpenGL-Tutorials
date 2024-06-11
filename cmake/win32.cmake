@@ -51,8 +51,37 @@ add_subdirectory(external/spdlog)
 
 add_subdirectory(external/glad)
 
+# Setting our assimp dependencies here
+# set(BUILD_SHARED_LIBS OFF)
+# if(APPLE)
+# set(BUILD_FRAMEWORK ON)
+# endif()
+# set(ASSIMP_DOUBLE_PRECISION ON)
+# set(ASSIMP_BUILD_TESTS OFF)
+# set(INJECT_DEBUG_POSTFIX ON)
+# set(ASSIMP_INSTALL_PDB ON)
+# add_definitions(-D__GLIBCXX_TYPE_INT_N_0=__int128)
+
+# add_definitions(-D__GLIBCXX_BITSIZE_INT_N_0=128) 
+add_subdirectory(external/assimp)
+# include(FetchContent)
+# set(FETCHCONTENT_BASE_DIR ${PROJECT_SOURCE_DIR}/external CACHE PATH "Missing description." FORCE)
+
+# FetchContent_Declare(assimp
+# GIT_REPOSITORY https://github.com/assimp/assimp.git
+# GIT_TAG master)
+# set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+# set(ASSIMP_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+# set(ASSIMP_INJECT_DEBUG_POSTFIX OFF CACHE BOOL "" FORCE)
+# set(ASSIMP_INSTALL OFF CACHE BOOL "" FORCE)
+
+# FetchContent_MakeAvailable(assimp)
+# target_include_directories(${PROJECT_NAME} PRIVATE external/assimp-src/include)
+# target_link_libraries(3d_renderer assimp)
+
 target_link_libraries(
     ${PROJECT_NAME}
+    assimp::assimp
     ${OPENGL_LIBRARIES}
     glfw
     ${Vulkan_LIBRARIES}

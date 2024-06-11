@@ -21,8 +21,11 @@
 // #include "tutorials/lighting-tutorial-02/lightingTutorial-lighting-02_2_diffusionLighting.h"
 // #include "tutorials/lighting-tutorial-02/lightingTutorial-lighting-02_3_specularLighting.h"
 // #include "tutorials/materials-tutorial-03/materialTutorial-01.h"
-// #include "tutorials/lightingMaps-tutorial-04/lightingMapsTutorial-01_1_diffuseMaps.h"
-#include "tutorials/lightingMaps-tutorial-04/lightingMapsTutorial-01_2_specularMaps.h"
+// #include "tutorials/lighting-tutorial-02/lightingMaps-tutorial-04/lightingMapsTutorial-01_1_diffuseMaps.h"
+// #include "tutorials/lighting-tutorial-02/lightingMaps-tutorial-04/lightingMapsTutorial-01_2_specularMaps.h"
+// #include "tutorials/lighting-tutorial-02/lightingCastersTutorial-01/lightingCastersTutorial-01.h"
+// #include "tutorials/lighting-tutorial-02/MultipleLights/multipleLightingTutorial-01.h"
+#include "tutorials/modelLoading-tutorials-04/modelLoadingTutorial-01.h"
 // #include "tutorials/example-skybox/Skybox.h"
 
 int main(int argc, char** argv){
@@ -77,7 +80,10 @@ int main(int argc, char** argv){
     // SpecularLightingExample(window);
     // MaterialExample(window);
     // DiffuseLightingMapsExample(window);
-    SpecularLightingMapsExample(window);
+    // SpecularLightingMapsExample(window);
+    // LightingCastersExample(window);
+    // MultipleLightingExample(window);
+    ModelLoadingExample(window);
 
 
     // ExampleSkybox(window, width, height);
